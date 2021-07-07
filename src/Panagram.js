@@ -8,7 +8,9 @@ const execute = (el, command, val) => {
 }
 
 export const init = (settings) => {
-  const controls = controlsPremade[settings.controls];
+  const controls = typeof settings.controls === 'string'
+    ? controlsPremade[settings.controls]
+    : settings.controls;
   const ctrElement = settings.ctrElement;
   const outElement = settings.outElement;
 

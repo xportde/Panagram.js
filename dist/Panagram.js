@@ -78,7 +78,7 @@ var execute = function execute(el, command, val) {
 };
 
 var init = function init(settings) {
-  var controls = controlsPremade[settings.controls];
+  var controls = typeof settings.controls === 'string' ? controlsPremade[settings.controls] : settings.controls;
   var ctrElement = settings.ctrElement;
   var outElement = settings.outElement;
 
